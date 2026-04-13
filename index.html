@@ -5,18 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elsa Zhou</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <style>
 
     /* ── Base ── */
     *, *::before, *::after { box-sizing: border-box; }
 
+    :root {
+      --cardinal:       #8C1515;
+      --cardinal-light: #B83A4B;
+      --cardinal-dark:  #820000;
+      --cardinal-bg:    #f9f0f0;
+      --cardinal-border:#dbb8b8;
+      --black:          #2E2D29;
+      --grey:           #53565A;
+      --grey-60:        #767674;
+      --grey-20:        #D5D5D4;
+      --grey-10:        #EAEAEA;
+      --bg:             #fafaf8;
+    }
+
     body {
-      font-family: "EB Garamond", Georgia, serif;
+      font-family: "Source Serif 4", Georgia, serif;
       font-size: 18px;
       line-height: 1.75;
-      color: #1a1a1a;
-      background: #fafaf8;
+      color: var(--black);
+      background: var(--bg);
       margin: 0;
       padding: 0;
     }
@@ -42,22 +56,24 @@
       object-fit: cover;
       border-radius: 6px;
       flex-shrink: 0;
-      border: 1px solid #e0ddd6;
+      border: 1px solid var(--grey-20);
     }
 
     .header-text h1 {
-      margin: 0 0 12px;
-      font-size: 28px;
+      margin: 0 0 4px;
+      font-family: "Source Serif 4", serif;
+      font-size: 30px;
       font-weight: 600;
+      color: var(--black);
       letter-spacing: 0.01em;
     }
 
     .header-text p {
       margin: 0 0 10px;
-      color: #333;
+      color: var(--black);
     }
 
-    /* ── Header link buttons (CV, Email) ── */
+    /* ── Header link buttons ── */
     .header-links {
       display: flex;
       gap: 10px;
@@ -66,60 +82,41 @@
     }
 
     .header-links a {
-      font-family: "Inter", sans-serif;
+      font-family: "Source Sans 3", sans-serif;
       font-size: 13px;
       font-weight: 500;
-      color: #2c5f8a;
+      color: var(--cardinal);
       text-decoration: none;
-      border: 1px solid #b8cfe0;
+      border: 1px solid var(--cardinal-border);
       border-radius: 4px;
       padding: 4px 12px;
       transition: background 0.15s, border-color 0.15s;
     }
 
     .header-links a:hover {
-      background: #eaf2f8;
-      border-color: #2c5f8a;
+      background: var(--cardinal-bg);
+      border-color: var(--cardinal);
     }
 
-/* ── Reflection button ── */
-    .paper-links a.reflection {
-      color: #5a3e7a;
-      border: 1px solid #c9b8e0;
+    /* ── Stanford wordmark ── */
+    .stanford-wordmark {
+      margin-top: 16px;
     }
 
-    .paper-links a.reflection:hover {
-      background: #f2eef8;
-      border-color: #5a3e7a;
-    }
-    
-    /* ── Capstone button ── */
-    .capstone-link a {
-      font-family: "Inter", sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: #5a3e7a;
-      text-decoration: none;
-      border: 1px solid #c9b8e0;
-      border-radius: 4px;
-      padding: 5px 16px;
-      transition: background 0.15s, border-color 0.15s;
+    .stanford-wordmark img {
+      height: 100px;
+      opacity: 0.75;
     }
 
-    .capstone-link a:hover {
-      background: #f2eef8;
-      border-color: #5a3e7a;
-    }
-    
     /* ── Section headings ── */
     h2 {
-      font-family: "Inter", sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #666;
-      border-bottom: 1px solid #ddd;
+      color: var(--grey);
+      border-bottom: 1px solid var(--grey-20);
       padding-bottom: 6px;
       margin-top: 52px;
       margin-bottom: 24px;
@@ -127,39 +124,64 @@
 
     hr {
       border: none;
-      border-top: 1px solid #e8e5de;
+      border-top: 1px solid var(--grey-20);
       margin: 52px 0;
+    }
+
+    /* ── Capstone button ── */
+    .capstone-link {
+      margin-top: 6px;
+    }
+
+    .capstone-link a {
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--cardinal);
+      text-decoration: none;
+      border: 1px solid var(--cardinal-border);
+      background: var(--cardinal-bg);
+      border-radius: 4px;
+      padding: 5px 16px;
+      display: inline-block;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .capstone-link a:hover {
+      background: #f0d8d8;
+      border-color: var(--cardinal);
     }
 
     /* ── Paper entries ── */
     .paper {
-      margin-bottom: 32px;
+      margin-bottom: 36px;
     }
 
     .paper-title {
+      font-family: "Source Serif 4", serif;
       font-weight: 600;
-      color: #1a3a52;
+      color: var(--cardinal-dark);
       text-decoration: none;
       font-size: 18px;
       line-height: 1.4;
     }
 
     .paper-title:hover {
-      color: #2c5f8a;
+      color: var(--cardinal);
       text-decoration: underline;
       text-underline-offset: 3px;
     }
 
     .paper .coauthors {
       font-style: italic;
-      color: #666;
+      color: var(--grey);
       font-size: 16px;
       display: block;
       margin-top: 2px;
     }
 
     .paper .coauthors a {
-      color: #2c5f8a;
+      color: var(--cardinal);
       text-decoration: none;
     }
 
@@ -176,58 +198,27 @@
     }
 
     .tag {
-      font-family: "Inter", sans-serif;
+      font-family: "Source Sans 3", sans-serif;
       font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      color: #2c5f8a;
-      background: #eaf2f8;
-      border: 1px solid #b8cfe0;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--cardinal);
+      background: var(--cardinal-bg);
+      border: 1px solid var(--cardinal-border);
       border-radius: 20px;
       padding: 2px 10px;
     }
 
-    /* ── Collapsible abstract ── */
-    details {
-      margin-top: 8px;
-    }
-
-    details summary {
-      cursor: pointer;
-      font-family: "Inter", sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: #2c5f8a;
-      list-style: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      user-select: none;
-    }
-
-    details summary::-webkit-details-marker { display: none; }
-
-    details summary::before {
-      content: "▶";
-      font-size: 9px;
-      transition: transform 0.15s;
-    }
-
-    details[open] summary::before {
-      transform: rotate(90deg);
-    }
-
-    details summary::after {
-      content: "Abstract";
-    }
-
-    details p {
+    /* ── Abstract (inline, no collapse) ── */
+    .abstract {
       margin-top: 10px;
       font-size: 16px;
       color: #444;
-      border-left: 3px solid #d0dfe8;
-      padding-left: 16px;
       font-style: italic;
+      border-left: 3px solid var(--cardinal-border);
+      padding-left: 16px;
+      line-height: 1.7;
     }
 
     /* ── Paper link buttons ── */
@@ -239,20 +230,32 @@
     }
 
     .paper-links a {
-      font-family: "Inter", sans-serif;
+      font-family: "Source Sans 3", sans-serif;
       font-size: 12px;
       font-weight: 500;
-      color: #2c5f8a;
+      color: var(--grey);
       text-decoration: none;
-      border: 1px solid #b8cfe0;
+      border: 1px solid var(--grey-20);
       border-radius: 4px;
       padding: 3px 11px;
-      transition: background 0.15s, border-color 0.15s;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
     }
 
     .paper-links a:hover {
-      background: #eaf2f8;
-      border-color: #2c5f8a;
+      background: var(--grey-10);
+      border-color: var(--grey-60);
+      color: var(--black);
+    }
+
+    /* ── Reflection button (Cardinal colored) ── */
+    .paper-links a.reflection {
+      color: var(--cardinal);
+      border: 1px solid var(--cardinal-border);
+    }
+
+    .paper-links a.reflection:hover {
+      background: var(--cardinal-bg);
+      border-color: var(--cardinal);
     }
 
     /* ── Teaching ── */
@@ -262,6 +265,7 @@
 
     .teaching-entry strong {
       display: block;
+      font-family: "Source Serif 4", serif;
       font-size: 17px;
     }
 
@@ -273,7 +277,7 @@
     }
 
     .teaching-entry ul a {
-      color: #2c5f8a;
+      color: var(--cardinal);
       text-decoration: none;
     }
 
@@ -284,7 +288,7 @@
     /* ── Responsive ── */
     @media (max-width: 560px) {
       .header { flex-direction: column; }
-      .header img { width: 120px; height: 120px; }
+      .header img { width: 130px; height: 130px; }
     }
 
   </style>
@@ -307,19 +311,15 @@
           <a href="assets/cv.pdf">CV</a>
           <a href="mailto:elsazhou@stanford.edu">Email</a>
         </div>
-          <div style="margin-top: 16px;">
-      <img src="stanford.png" alt="Stanford University" style="height: 100px; opacity: 0.8;" />
-    </div>
-    
-    <div class="capstone-link">
-      <a href="assets/capstone/cover.pdf">Capstone ePortfolio Cover Letter</a>
-    </div>
-        
+        <div class="stanford-wordmark">
+          <img src="stanford.png" alt="Stanford University" />
+        </div>
       </div>
     </div>
 
-
-
+    <div class="capstone-link">
+      <a href="assets/capstone/cover.pdf">Capstone ePortfolio Cover Letter</a>
+    </div>
 
     <hr />
 
@@ -332,10 +332,7 @@
         <span class="tag">Labor</span>
         <span class="tag">China</span>
       </div>
-      <details>
-        <summary></summary>
-        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
-      </details>
+      <p class="abstract">Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       <div class="paper-links">
         <a href="assets/papers/econ115.pdf">PDF</a>
         <a class="reflection" href="assets/capstone/econ115r.pdf">Capstone Reflection</a>
@@ -349,10 +346,7 @@
         <span class="tag">Labor</span>
         <span class="tag">China</span>
       </div>
-      <details>
-        <summary></summary>
-        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
-      </details>
+      <p class="abstract">Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       <div class="paper-links">
         <a href="assets/papers/econ122.pdf">PDF</a>
       </div>
@@ -364,10 +358,7 @@
         <span class="tag">Health</span>
         <span class="tag">China</span>
       </div>
-      <details>
-        <summary></summary>
-        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
-      </details>
+      <p class="abstract">Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       <div class="paper-links">
         <a href="assets/papers/econ177.pdf">PDF</a>
       </div>
@@ -378,24 +369,18 @@
       <div class="tags">
         <span class="tag">China</span>
       </div>
-      <details>
-        <summary></summary>
-        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
-      </details>
+      <p class="abstract">Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       <div class="paper-links">
         <a href="assets/papers/soc175_2.pdf">PDF</a>
       </div>
     </div>
 
     <div class="paper">
-      <a class="paper-title" href="assets/papers/soc175_1.pdf">Soc 175: Growth without Discipline </a>
+      <a class="paper-title" href="assets/papers/soc175_1.pdf">Soc 175: Growth without Discipline</a>
       <div class="tags">
         <span class="tag">China</span>
       </div>
-      <details>
-        <summary></summary>
-        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
-      </details>
+      <p class="abstract">Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       <div class="paper-links">
         <a href="assets/papers/soc175_1.pdf">PDF</a>
       </div>
@@ -403,10 +388,7 @@
 
     <div class="paper">
       <a class="paper-title" href="assets/papers/math56_1.pdf">Math 56: Linear Algebra Paper</a>
-      <details>
-        <summary></summary>
-        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
-      </details>
+      <p class="abstract">Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       <div class="paper-links">
         <a href="assets/papers/math56_1.pdf">PDF</a>
       </div>
@@ -414,10 +396,7 @@
 
     <div class="paper">
       <a class="paper-title" href="assets/papers/math56_2.pdf">Math 56: Real Analysis Paper</a>
-      <details>
-        <summary></summary>
-        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
-      </details>
+      <p class="abstract">Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       <div class="paper-links">
         <a href="assets/papers/math56_2.pdf">PDF</a>
       </div>
@@ -430,10 +409,7 @@
 
     <div class="paper">
       <a class="paper-title" href="assets/presentations/econ157pres.pdf">Econ 157: Acquisition of Activision-Blizzard by Microsoft</a>
-      <details>
-        <summary></summary>
-        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
-      </details>
+      <p class="abstract">Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       <div class="paper-links">
         <a href="assets/presentations/econ157pres.pdf">PDF</a>
       </div>
@@ -441,10 +417,7 @@
 
     <div class="paper">
       <a class="paper-title" href="assets/presentations/econ177pres.pdf">Econ 177: Electricity Pricing Reform</a>
-      <details>
-        <summary></summary>
-        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
-      </details>
+      <p class="abstract">Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       <div class="paper-links">
         <a href="assets/presentations/econ177pres.pdf">PDF</a>
       </div>
