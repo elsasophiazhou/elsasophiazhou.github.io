@@ -3,195 +3,261 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ELSA ZHOU</title>
+  <title>Elsa Zhou</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    /* ── Page basics ── */
+
+    /* ── Base ── */
+    *, *::before, *::after { box-sizing: border-box; }
+
     body {
-      font-family: "Times New Roman", Times, serif;
-      font-size: 17px;
-      line-height: 1.7;
-      color: #222;
-      background: #fff;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: 18px;
+      line-height: 1.75;
+      color: #1a1a1a;
+      background: #fafaf8;
       margin: 0;
       padding: 0;
     }
 
-    /* ── Centered content column ── */
+    /* ── Layout ── */
     .container {
-      max-width: 720px;
-      margin: 60px auto;
-      padding: 0 24px;
+      max-width: 740px;
+      margin: 64px auto;
+      padding: 0 28px;
     }
 
-    /* ── Header: photo + bio side by side ── */
+    /* ── Header ── */
     .header {
       display: flex;
-      gap: 36px;
+      gap: 40px;
       align-items: flex-start;
-      margin-bottom: 40px;
+      margin-bottom: 44px;
     }
 
     .header img {
-      width: 160px;
-      height: 160px;
+      width: 152px;
+      height: 152px;
       object-fit: cover;
-      border-radius: 4px;
+      border-radius: 6px;
       flex-shrink: 0;
+      border: 1px solid #e0ddd6;
     }
 
     .header-text h1 {
-      margin: 0 0 10px;
-      font-size: 26px;
-      font-weight: bold;
+      margin: 0 0 12px;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
     }
 
     .header-text p {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    /* ── Header link buttons (CV, Email) ── */
+    .header-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
     }
 
     .header-links a {
-      margin-right: 14px;
-      color: #1a5276;
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #2c5f8a;
       text-decoration: none;
-      font-size: 15px;
+      border: 1px solid #b8cfe0;
+      border-radius: 4px;
+      padding: 4px 12px;
+      transition: background 0.15s, border-color 0.15s;
     }
 
     .header-links a:hover {
-      text-decoration: underline;
+      background: #eaf2f8;
+      border-color: #2c5f8a;
     }
 
     /* ── Section headings ── */
     h2 {
-      font-size: 20px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 4px;
-      margin-top: 48px;
-      margin-bottom: 20px;
-    }
-
-    /* ── Paper entries ── */
-    .paper {
-      margin-bottom: 28px;
-    }
-
-    .paper a {
-      font-weight: bold;
-      color: #1a5276;
-      text-decoration: none;
-    }
-
-    .paper a:hover {
-      text-decoration: underline;
-    }
-
-    .paper .coauthors {
-      font-style: italic;
-      color: #555;
-      font-size: 15px;
-    }
-
-    .paper .tag {
-      font-style: italic;
-      color: #555;
-      font-size: 15px;
-    }
-
-    /* ── Collapsible abstract ── */
-    details {
-      margin-top: 6px;
-    }
-
-    details summary {
-      cursor: pointer;
-      color: #1a5276;
-      font-size: 15px;
-      list-style: none;
-      display: inline;
-    }
-
-    details summary::-webkit-details-marker {
-      display: none;
-    }
-
-    details summary::before {
-      content: "▶ Abstract";
-    }
-
-    details[open] summary::before {
-      content: "▼ Abstract";
-    }
-
-    details p {
-      margin-top: 8px;
-      font-size: 15px;
-      color: #333;
-      border-left: 3px solid #ddd;
-      padding-left: 14px;
-    }
-
-    /* ── Paper links row ── */
-    .paper-links {
-      margin-top: 6px;
-      font-size: 15px;
-    }
-
-    .paper-links a {
-      color: #1a5276;
-      margin-right: 12px;
-      font-weight: normal;
-      text-decoration: none;
-    }
-
-    .paper-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* ── Committee list ── */
-    .committee {
-      font-size: 15px;
-      padding-left: 0;
-      list-style: none;
-    }
-
-    .committee li {
-      margin-bottom: 4px;
-    }
-
-    .committee a {
-      color: #1a5276;
-      text-decoration: none;
-    }
-
-    .committee a:hover {
-      text-decoration: underline;
-    }
-
-    /* ── Teaching ── */
-    .teaching-entry {
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #666;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 6px;
+      margin-top: 52px;
       margin-bottom: 24px;
-    }
-
-    .teaching-entry strong {
-      display: block;
-      margin-bottom: 4px;
     }
 
     hr {
       border: none;
-      border-top: 1px solid #ddd;
-      margin: 48px 0;
+      border-top: 1px solid #e8e5de;
+      margin: 52px 0;
     }
 
-    /* ── Responsive: stack on small screens ── */
-    @media (max-width: 560px) {
-      .header {
-        flex-direction: column;
-      }
-      .header img {
-        width: 120px;
-        height: 120px;
-      }
+    /* ── Paper entries ── */
+    .paper {
+      margin-bottom: 32px;
     }
+
+    .paper-title {
+      font-weight: 600;
+      color: #1a3a52;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .paper-title:hover {
+      color: #2c5f8a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .paper .coauthors {
+      font-style: italic;
+      color: #666;
+      font-size: 16px;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .paper .coauthors a {
+      color: #2c5f8a;
+      text-decoration: none;
+    }
+
+    .paper .coauthors a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Tag pills ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .tag {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: #2c5f8a;
+      background: #eaf2f8;
+      border: 1px solid #b8cfe0;
+      border-radius: 20px;
+      padding: 2px 10px;
+    }
+
+    /* ── Collapsible abstract ── */
+    details {
+      margin-top: 8px;
+    }
+
+    details summary {
+      cursor: pointer;
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #2c5f8a;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      user-select: none;
+    }
+
+    details summary::-webkit-details-marker { display: none; }
+
+    details summary::before {
+      content: "▶";
+      font-size: 9px;
+      transition: transform 0.15s;
+    }
+
+    details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    details summary::after {
+      content: "Abstract";
+    }
+
+    details p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #444;
+      border-left: 3px solid #d0dfe8;
+      padding-left: 16px;
+      font-style: italic;
+    }
+
+    /* ── Paper link buttons ── */
+    .paper-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .paper-links a {
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: #2c5f8a;
+      text-decoration: none;
+      border: 1px solid #b8cfe0;
+      border-radius: 4px;
+      padding: 3px 11px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .paper-links a:hover {
+      background: #eaf2f8;
+      border-color: #2c5f8a;
+    }
+
+    /* ── Teaching ── */
+    .teaching-entry {
+      margin-bottom: 28px;
+    }
+
+    .teaching-entry strong {
+      display: block;
+      font-size: 17px;
+    }
+
+    .teaching-entry ul {
+      margin: 6px 0 0;
+      padding-left: 20px;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .teaching-entry ul a {
+      color: #2c5f8a;
+      text-decoration: none;
+    }
+
+    .teaching-entry ul a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 560px) {
+      .header { flex-direction: column; }
+      .header img { width: 120px; height: 120px; }
+    }
+
   </style>
 </head>
 <body>
@@ -199,13 +265,15 @@
 
     <!-- ══ HEADER ══ -->
     <div class="header">
-      <img src="avatar.jpg" alt="Photo of Your Name" />
+      <img src="avatar.jpg" alt="Photo of Elsa Zhou" />
       <div class="header-text">
         <h1>Elsa Zhou</h1>
         <p>
-          I am an undergraduate in Economics, minoring in Math, at Stanford University. My research interests include industrial organization, development economics, health economics, and China.
+          I am an undergraduate in Economics, minoring in Math, at Stanford University.
+          My research interests include industrial organization, development economics,
+          health economics, and China.
         </p>
-        <p>I am seeking to pursue a pre-doc assignment next cycle (2027-2029) and later, a PhD.</p>
+        <p>I am seeking to pursue a pre-doc assignment next cycle (2027–2029) and later, a PhD.</p>
         <div class="header-links">
           <a href="assets/cv.pdf">CV</a>
           <a href="mailto:elsazhou@stanford.edu">Email</a>
@@ -219,15 +287,14 @@
     <h2>Works in Progress</h2>
 
     <div class="paper">
-      <a href="assets/papers/econ115.pdf">Econ 115: Graduate Enrollment after the China Initiative </a><br />
-      <span class="tag">Labor</span>
-      <span class="tag">China</span>
+      <a class="paper-title" href="assets/papers/econ115.pdf">Econ 115: Graduate Enrollment after the China Initiative</a>
+      <div class="tags">
+        <span class="tag">Labor</span>
+        <span class="tag">China</span>
+      </div>
       <details>
         <summary></summary>
-        <p>
-          Write your abstract here. Describe the research question, data, methods, and
-          main findings. This section can be as long as needed.
-        </p>
+        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       </details>
       <div class="paper-links">
         <a href="assets/papers/econ115.pdf">PDF</a>
@@ -235,15 +302,15 @@
     </div>
 
     <div class="paper">
-      <a href="assets/papers/econ122.pdf">Econ 122: Health after Insurance for China's Migrant Population </a><br />
-      <span class="tag">Health</span>
-      <span class="tag">Labor</span>
-      <span class="tag">China</span>
+      <a class="paper-title" href="assets/papers/econ122.pdf">Econ 122: Health after Insurance for China's Migrant Population</a>
+      <div class="tags">
+        <span class="tag">Health</span>
+        <span class="tag">Labor</span>
+        <span class="tag">China</span>
+      </div>
       <details>
         <summary></summary>
-        <p>
-          Abstract for your second paper. Replace this text with your actual abstract.
-        </p>
+        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       </details>
       <div class="paper-links">
         <a href="assets/papers/econ122.pdf">PDF</a>
@@ -251,15 +318,14 @@
     </div>
 
     <div class="paper">
-      <a href="assets/papers/econ177.pdf">Econ 177: Migration after Extreme Temperature under China's Hukou System </a><br />
-      <span class="tag">Health</span>
-      <span class="tag">China</span>
+      <a class="paper-title" href="assets/papers/econ177.pdf">Econ 177: Migration after Extreme Temperature under China's Hukou System</a>
+      <div class="tags">
+        <span class="tag">Health</span>
+        <span class="tag">China</span>
+      </div>
       <details>
         <summary></summary>
-        <p>
-          Write your abstract here. Describe the research question, data, methods, and
-          main findings. This section can be as long as needed.
-        </p>
+        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       </details>
       <div class="paper-links">
         <a href="assets/papers/econ177.pdf">PDF</a>
@@ -267,13 +333,10 @@
     </div>
 
     <div class="paper">
-      <a href="assets/papers/math56_1.pdf"> Math 56: Linear Algebra Paper </a><br />
+      <a class="paper-title" href="assets/papers/math56_1.pdf">Math 56: Linear Algebra Paper</a>
       <details>
         <summary></summary>
-        <p>
-          Write your abstract here. Describe the research question, data, methods, and
-          main findings. This section can be as long as needed.
-        </p>
+        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       </details>
       <div class="paper-links">
         <a href="assets/papers/math56_1.pdf">PDF</a>
@@ -281,32 +344,26 @@
     </div>
 
     <div class="paper">
-      <a href="assets/papers/math56_2.pdf"> Math 56: Real Analysis Paper </a><br />
+      <a class="paper-title" href="assets/papers/math56_2.pdf">Math 56: Real Analysis Paper</a>
       <details>
         <summary></summary>
-        <p>
-          Write your abstract here. Describe the research question, data, methods, and
-          main findings. This section can be as long as needed.
-        </p>
+        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       </details>
       <div class="paper-links">
         <a href="assets/papers/math56_2.pdf">PDF</a>
       </div>
     </div>
-    
+
     <hr />
 
     <!-- ══ PRESENTATIONS ══ -->
     <h2>Presentations</h2>
 
     <div class="paper">
-     <a href="assets/presentations/econ157pres.pdf"> Econ 157: Acquisition of Activision-Blizzard by Microsoft </a><br />
+      <a class="paper-title" href="assets/presentations/econ157pres.pdf">Econ 157: Acquisition of Activision-Blizzard by Microsoft</a>
       <details>
         <summary></summary>
-        <p>
-          Write your abstract here. Describe the research question, data, methods, and
-          main findings. This section can be as long as needed.
-        </p>
+        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       </details>
       <div class="paper-links">
         <a href="assets/presentations/econ157pres.pdf">PDF</a>
@@ -314,26 +371,23 @@
     </div>
 
     <div class="paper">
-     <a href="assets/presentations/econ177pres.pdf"> Econ 177: Electricity Pricing Reform </a><br />
+      <a class="paper-title" href="assets/presentations/econ177pres.pdf">Econ 177: Electricity Pricing Reform</a>
       <details>
         <summary></summary>
-        <p>
-          Write your abstract here. Describe the research question, data, methods, and
-          main findings. This section can be as long as needed.
-        </p>
+        <p>Write your abstract here. Describe the research question, data, methods, and main findings.</p>
       </details>
       <div class="paper-links">
         <a href="assets/presentations/econ177pres.pdf">PDF</a>
       </div>
     </div>
 
-     <hr />
+    <hr />
 
     <!-- ══ TEACHING ══ -->
     <h2>Teaching</h2>
 
     <div class="teaching-entry">
-      <strong>Teaching Assistant [Winter 2026]</strong>
+      <strong>Teaching Assistant — Winter 2026</strong>
       Econ 131: The Chinese Economy
       <ul>
         <li>Brief description of what you did</li>
@@ -342,6 +396,6 @@
       </ul>
     </div>
 
-  </div><!-- end .container -->
+  </div>
 </body>
 </html>
