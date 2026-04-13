@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name</title>
+  <style>
+    /* ── Page basics ── */
+    body {
+      font-family: Georgia, serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #222;
+      background: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ── Centered content column ── */
+    .container {
+      max-width: 720px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+
+    /* ── Header: photo + bio side by side ── */
+    .header {
+      display: flex;
+      gap: 36px;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .header img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .header-text h1 {
+      margin: 0 0 10px;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .header-text p {
+      margin: 0 0 12px;
+    }
+
+    .header-links a {
+      margin-right: 14px;
+      color: #1a5276;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .header-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Section headings ── */
+    h2 {
+      font-size: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 4px;
+      margin-top: 48px;
+      margin-bottom: 20px;
+    }
+
+    /* ── Paper entries ── */
+    .paper {
+      margin-bottom: 28px;
+    }
+
+    .paper a {
+      font-weight: bold;
+      color: #1a5276;
+      text-decoration: none;
+    }
+
+    .paper a:hover {
+      text-decoration: underline;
+    }
+
+    .paper .coauthors {
+      font-style: italic;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .paper .tag {
+      font-style: italic;
+      color: #555;
+      font-size: 15px;
+    }
+
+    /* ── Collapsible abstract ── */
+    details {
+      margin-top: 6px;
+    }
+
+    details summary {
+      cursor: pointer;
+      color: #1a5276;
+      font-size: 15px;
+      list-style: none;
+      display: inline;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details summary::before {
+      content: "▶ Abstract";
+    }
+
+    details[open] summary::before {
+      content: "▼ Abstract";
+    }
+
+    details p {
+      margin-top: 8px;
+      font-size: 15px;
+      color: #333;
+      border-left: 3px solid #ddd;
+      padding-left: 14px;
+    }
+
+    /* ── Paper links row ── */
+    .paper-links {
+      margin-top: 6px;
+      font-size: 15px;
+    }
+
+    .paper-links a {
+      color: #1a5276;
+      margin-right: 12px;
+      font-weight: normal;
+      text-decoration: none;
+    }
+
+    .paper-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Committee list ── */
+    .committee {
+      font-size: 15px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .committee li {
+      margin-bottom: 4px;
+    }
+
+    .committee a {
+      color: #1a5276;
+      text-decoration: none;
+    }
+
+    .committee a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Teaching ── */
+    .teaching-entry {
+      margin-bottom: 24px;
+    }
+
+    .teaching-entry strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 48px 0;
+    }
+
+    /* ── Responsive: stack on small screens ── */
+    @media (max-width: 560px) {
+      .header {
+        flex-direction: column;
+      }
+      .header img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ══ HEADER ══ -->
+    <div class="header">
+      <img src="avatar.jpg" alt="Photo of Your Name" />
+      <div class="header-text">
+        <h1>Your Name</h1>
+        <p>
+          I am a PhD candidate in Economics at [Your University]. My research focuses on
+          [brief description of your research interests].
+        </p>
+        <p>I will be on the academic job market this year (2025–2026).</p>
+        <div class="header-links">
+          <a href="assets/cv.pdf">CV</a>
+          <a href="mailto:you@university.edu">Email</a>
+        </div>
+        <br />
+        <strong>Committee:</strong>
+        <ul class="committee">
+          <li>
+            <a href="https://example.com">Advisor Name</a> (Primary) —
+            <a href="mailto:advisor@university.edu">advisor@university.edu</a>
+          </li>
+          <li>
+            <a href="https://example.com">Committee Member 2</a> —
+            <a href="mailto:member2@university.edu">member2@university.edu</a>
+          </li>
+          <li>
+            <a href="https://example.com">Committee Member 3</a> —
+            <a href="mailto:member3@university.edu">member3@university.edu</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- ══ WORKING PAPERS ══ -->
+    <h2>Working Papers</h2>
+
+    <div class="paper">
+      <a href="assets/papers/paper1.pdf">Your Job Market Paper Title Here</a><br />
+      <span class="tag">Job market paper</span>
+      <details>
+        <summary></summary>
+        <p>
+          Write your abstract here. Describe the research question, data, methods, and
+          main findings. This section can be as long as needed.
+        </p>
+      </details>
+      <div class="paper-links">
+        <a href="assets/papers/paper1.pdf">PDF</a>
+        <a href="assets/papers/slides1.pdf">Slides</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <a href="assets/papers/paper2.pdf">Your Second Working Paper Title</a><br />
+      <span class="coauthors">with <a href="https://coauthor.com">Co-Author Name</a></span>
+      <details>
+        <summary></summary>
+        <p>
+          Abstract for your second paper. Replace this text with your actual abstract.
+        </p>
+      </details>
+      <div class="paper-links">
+        <a href="assets/papers/paper2.pdf">PDF</a>
+        <a href="assets/papers/slides2.pdf">Slides</a>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- ══ WORK IN PROGRESS ══ -->
+    <h2>Work in Progress</h2>
+
+    <div class="paper">
+      <strong>Your Work-in-Progress Title</strong><br />
+      <span class="coauthors">with <a href="https://coauthor.com">Co-Author Name</a></span>
+      <details>
+        <summary></summary>
+        <p>
+          Brief description of work in progress. You can use a short abstract or just
+          a sentence or two describing the project.
+        </p>
+      </details>
+    </div>
+
+    <hr />
+
+    <!-- ══ TEACHING ══ -->
+    <h2>Teaching</h2>
+
+    <div class="teaching-entry">
+      <strong>Primary Instructor, [Semester Year]</strong>
+      Course Name: Course Subtitle
+      <ul>
+        <li>Brief description of what you did</li>
+        <li>Another bullet point about the course</li>
+        <li><a href="assets/teaching/syllabus.pdf">Syllabus</a></li>
+      </ul>
+    </div>
+
+    <div class="teaching-entry">
+      <strong>Teaching Assistant</strong>
+      <ul>
+        <li>Course Name 1 (Course Number, X quarters)</li>
+        <li>Course Name 2 (Course Number, X quarters)</li>
+      </ul>
+    </div>
+
+  </div><!-- end .container -->
+</body>
+</html>
