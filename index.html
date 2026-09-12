@@ -4,585 +4,148 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elsa Zhou</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <style>
 
-    /* ── Base ── */
-    *, *::before, *::after { box-sizing: border-box; }
+    * { box-sizing: border-box; }
 
-    :root {
-      --cardinal:       #8C1515;
-      --cardinal-light: #B83A4B;
-      --cardinal-dark:  #820000;
-      --cardinal-bg:    #f9f0f0;
-      --cardinal-border:#dbb8b8;
-      --black:          #2E2D29;
-      --grey:           #53565A;
-      --grey-60:        #767674;
-      --grey-20:        #D5D5D4;
-      --grey-10:        #EAEAEA;
-      --bg:             #fafaf8;
+    html, body {
+      height: 100%;
+      margin: 0;
     }
 
     body {
-      font-family: "Source Serif 4", Georgia, serif;
-      font-size: 18px;
-      line-height: 1.75;
-      color: var(--black);
-      background: var(--bg);
-      margin: 0;
-      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #111;
+      background: #fff;
     }
 
-    /* ── Layout ── */
-    .container {
-      max-width: 740px;
-      margin: 64px auto;
-      padding: 0 28px;
+    a {
+      color: #111;
     }
 
-    /* ── Header ── */
-    .header {
+    a:hover {
+      color: #666;
+    }
+
+    .page {
       display: flex;
-      gap: 40px;
-      align-items: flex-start;
-      margin-bottom: 44px;
+      height: 100vh;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .header img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 6px;
+    .left-col {
+      width: 220px;
       flex-shrink: 0;
-      border: 1px solid var(--grey-20);
+      padding: 60px 24px;
     }
 
-    .header-text h1 {
-      margin: 0 0 4px;
-      font-family: "Source Serif 4", serif;
-      font-size: 30px;
+    .left-col img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .left-col h1 {
+      margin: 0 0 8px;
+      font-size: 20px;
       font-weight: 600;
-      color: var(--black);
-      letter-spacing: 0.01em;
     }
 
-    .header-text p {
-      margin: 0 0 10px;
-      color: var(--black);
+    .left-col p {
+      margin: 0;
+      font-size: 15px;
     }
 
-    /* ── Header link buttons ── */
-    .header-links {
-      display: flex;
-      gap: 10px;
-      margin-top: 14px;
-      flex-wrap: wrap;
+    .right-col {
+      flex: 1;
+      overflow-y: auto;
+      padding: 60px 24px;
+      border-left: 1px solid #eee;
     }
 
-    .header-links a {
-      font-family: "Source Sans 3", sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--cardinal);
-      text-decoration: none;
-      border: 1px solid var(--cardinal-border);
-      border-radius: 4px;
-      padding: 4px 12px;
-      transition: background 0.15s, border-color 0.15s;
-    }
-
-    .header-links a:hover {
-      background: var(--cardinal-bg);
-      border-color: var(--cardinal);
-    }
-
-    /* ── Stanford wordmark ── */
-    .stanford-wordmark {
-      margin-top: 16px;
-    }
-
-    .stanford-wordmark img {
-      height: 90px;
-      opacity: 0.75;
-    }
-
-    /* ── Section headings ── */
-    h2 {
-      font-family: "Source Sans 3", sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--grey);
-      border-bottom: 1px solid var(--grey-20);
-      padding-bottom: 6px;
-      margin-top: 52px;
+    .paper {
       margin-bottom: 24px;
     }
 
-    hr {
-      border: none;
-      border-top: 1px solid var(--grey-20);
-      margin: 52px 0;
-    }
-
-    /* ── Capstone button ── */
-    .capstone-link {
-      margin-top: 6px;
-    }
-
-    .capstone-link a {
-      font-family: "Source Sans 3", sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--cardinal);
-      text-decoration: none;
-      border: 1px solid var(--cardinal-border);
-      background: var(--cardinal-bg);
-      border-radius: 4px;
-      padding: 5px 16px;
-      display: inline-block;
-      transition: background 0.15s, border-color 0.15s;
-    }
-
-    .capstone-link a:hover {
-      background: #f0d8d8;
-      border-color: var(--cardinal);
-    }
-
-    /* ── Paper entries ── */
-    .paper {
-      margin-bottom: 36px;
-    }
-
     .paper-title {
-      font-family: "Source Serif 4", serif;
       font-weight: 600;
-      color: var(--cardinal-dark);
       text-decoration: none;
-      font-size: 18px;
-      line-height: 1.4;
     }
 
     .paper-title:hover {
-      color: var(--cardinal);
       text-decoration: underline;
-      text-underline-offset: 3px;
     }
 
-    .paper .coauthors {
-      font-style: italic;
-      color: var(--grey);
-      font-size: 16px;
-      display: block;
+    .paper .meta {
+      font-size: 14px;
+      color: #666;
       margin-top: 2px;
     }
 
-    .paper .coauthors a {
-      color: var(--cardinal);
-      text-decoration: none;
-    }
-
-    .paper .coauthors a:hover {
-      text-decoration: underline;
-    }
-
-    /* ── Tag pills ── */
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-
-    .tag {
-      font-family: "Source Sans 3", sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--cardinal);
-      background: var(--cardinal-bg);
-      border: 1px solid var(--cardinal-border);
-      border-radius: 20px;
-      padding: 2px 10px;
-    }
-
-    /* ── Abstract (inline, no collapse) ── */
-    .abstract {
-      margin-top: 10px;
-      font-size: 16px;
-      color: #444;
-      border-left: 3px solid var(--cardinal-border);
-      padding-left: 16px;
-      line-height: 1.7;
-    }
-
-    /* ── Paper link buttons ── */
-    .paper-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .paper-links a {
-      font-family: "Source Sans 3", sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--grey);
-      text-decoration: none;
-      border: 1px solid var(--grey-20);
-      border-radius: 4px;
-      padding: 3px 11px;
-      transition: background 0.15s, border-color 0.15s, color 0.15s;
-    }
-
-    .paper-links a:hover {
-      background: var(--grey-10);
-      border-color: var(--grey-60);
-      color: var(--black);
-    }
-
-    /* ── Reflection button (Cardinal colored) ── */
-    .paper-links a.reflection {
-      color: var(--cardinal);
-      border: 1px solid var(--cardinal-border);
-    }
-
-    .paper-links a.reflection:hover {
-      background: var(--cardinal-bg);
-      border-color: var(--cardinal);
-    }
-
-    /* ── Teaching ── */
-    .teaching-entry {
-      margin-bottom: 28px;
-    }
-
-    .teaching-entry strong {
-      display: block;
-      font-family: "Source Serif 4", serif;
-      font-size: 17px;
-    }
-
-    .teaching-entry ul {
+    .paper p.abstract {
       margin: 6px 0 0;
-      padding-left: 20px;
-      font-size: 16px;
-      color: #444;
+      font-size: 15px;
+      color: #333;
     }
 
-    .teaching-entry ul a {
-      color: var(--cardinal);
-      text-decoration: none;
-    }
-
-    .teaching-entry ul a:hover {
-      text-decoration: underline;
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 560px) {
-      .header { flex-direction: column; }
-      .header img { width: 130px; height: 130px; }
+    @media (max-width: 700px) {
+      .page { flex-direction: column; height: auto; }
+      .left-col { width: auto; padding: 40px 20px; }
+      .right-col { border-left: none; padding: 40px 20px; }
     }
 
   </style>
 </head>
 <body>
-  <div class="container">
 
-    <!-- ══ HEADER ══ -->
-    <div class="header">
+  <div class="page">
+
+    <div class="left-col">
       <img src="avatar.jpg" alt="Photo of Elsa Zhou" />
-      <div class="header-text">
-        <h1>Elsa Zhou</h1>
-        <p>
-          I am an undergraduate in Economics, minoring in Math, at Stanford University.
-          My research interests include industrial organization, development economics,
-          health economics, and China.
-        </p>
-        <p>I am seeking to pursue a pre-doc assignment next cycle (2027–2029) and then a PhD.</p>
-        <div class="header-links">
-          <a href="assets/cv.pdf">CV</a>
-          <a href="mailto:elsazhou@stanford.edu">Email</a>
-        </div>
-        <div class="stanford-wordmark">
-          <img src="stanford.png" alt="Stanford University" />
-        </div>
-      <div class="capstone-link">
-      <a href="assets/capstone/cover.pdf">Capstone ePortfolio Cover Letter</a>
-      </div>
-
-      </div>
+      <h1>Elsa Zhou</h1>
+      <p><a href="mailto:elsazhou@stanford.edu">elsazhou@stanford.edu</a></p>
     </div>
 
+    <div class="right-col">
 
-
-    <blockquote style="
-      margin: 40px 0 0 0;
-      padding: 24px 32px;
-      text-align: center;
-      font-style: italic;
-      color: var(--black);
-      font-size: 22px;
-      line-height: 1.6;
-      border: none;
-    ">
-      "Life can only be understood backwards; but it must be lived forwards."
-      <footer style="margin-top: 12px; font-style: normal; font-size: 15px; color: var(--grey-60);">
-        — Søren Kierkegaard
-      </footer>
-    </blockquote>
-    
-    
-    <hr />
-
-    <!-- ══ COURSEWORK ══ -->
-    <h2>Coursework: Economic Papers </h2>
-
-    <div class="paper">
-      <a class="paper-title" href="assets/papers/econ115.pdf">Econ 115: Graduate Enrollment after the China Initiative</a>
-      <div class="tags">
-        <span class="tag">Labor</span>
-        <span class="tag">China</span>
+      <div class="paper">
+        <a class="paper-title" href="assets/papers/econ115.pdf">Econ 115: Graduate Enrollment after the China Initiative</a>
+        <div class="meta">Labor, China</div>
+        <p class="abstract">Using synthetic control to construct a counterfactual for Chinese graduate enrollment at U.S. universities, this paper estimates that the DOJ's 2018 China Initiative caused a 4.05% drop in Chinese graduate enrollment, with a potentially accelerating trend.</p>
       </div>
-      <p class="abstract"> Using synthetic control to construct a counterfactual for Chinese graduate enrollment at U.S. universities, this paper estimates that the DOJ's 2018 China Initiative caused a 4.05% drop in Chinese graduate enrollment, with a potentially accelerating trend. </p>
-      <div class="paper-links">
-        <a href="assets/papers/econ115.pdf">PDF</a>
+
+      <div class="paper">
+        <a class="paper-title" href="assets/papers/econ122.pdf">Econ 122: Health after Insurance for China's Migrant Population</a>
+        <div class="meta">Health, Labor, China</div>
+        <p class="abstract">Using a two-way fixed-effects difference-in-differences design on China Family Panel Studies data, this paper finds that China's 2016 merger of urban (URBMI) and rural (NRCMS) health insurance produced a net increase in uninsurance of 5.6 percentage points among migrants in the short run, consistent with individuals disenrolling from NRCMS upon announcement of the new scheme but facing delays in completing enrollment in URRBMI (the merged insurance scheme). This paper did not find significant changes in self-reported health outcomes or utilization.</p>
       </div>
-        <div style="
-          margin-top: 12px;
-          padding: 10px 16px;
-          border-left: 3px solid var(--cardinal);
-          background: var(--cardinal-bg);
-          color: var(--grey);
-          font-size: 15px;
-          font-style: italic;
-          line-height: 1.65;
-        ">
-          I enjoyed this paper greatly as I was able to apply a newly learned econometrics method (synthetic control) to a policy issue impacting labor and innovation in the U.S., the enrollment of Chinese graduate students. The China Initiative had struck me as a policy whose costs were underdiscussed relative to its stated security aims, and building a rigorous counterfactual using a method learned in class gave me a way to show this with evidence. This paper also deepened my interest in how U.S.-China tensions play out not just at the diplomatic level in D.C. but on a research level, impacting educational institutions including Stanford and the future of American innovation. This was a core experience where I felt that I could use econometrics to explore a policy question I felt was less evidence-based, and helped me develop a way to think about how economics can better inform politics. 
-        </div>
+
+      <div class="paper">
+        <a class="paper-title" href="assets/papers/econ177.pdf">Econ 177: Migration after Extreme Temperature under China's Hukou System</a>
+        <div class="meta">Health, China</div>
+        <p class="abstract">Using a two-way fixed-effects regression on China Panel Family Studies data aggregated to the province-year level, this paper finds that one more day where average temperature rises above 90°F raises inter-provincial migration rates by 0.19 percentage points, with the hukou system likely muting a larger response.</p>
+      </div>
+
+      <div class="paper">
+        <a class="paper-title" href="assets/papers/soc175_2.pdf">Soc 175: Control over Growth</a>
+        <div class="meta">China</div>
+        <p class="abstract">This paper argues that China's initial growth model was built on capital accumulation, export manufacturing, and an extensive use of FDI. As investment returns diminish, the party's drive for political consolidation increasingly blocks the fiscal and structural reforms needed to avoid the middle-income trap.</p>
+      </div>
+
+      <div class="paper">
+        <a class="paper-title" href="assets/papers/soc175_1.pdf">Soc 175: Growth without Discipline</a>
+        <div class="meta">China</div>
+        <p class="abstract">This paper argues that China's economy is organized differently from other major modern economies through its reliance on state-owned enterprises, financial insulation from the global economy, and a party promotion system narrowly focused on GDP growth and fiscal revenues. These features consolidate political power but generate runaway debt and slacken market discipline.</p>
+      </div>
+
     </div>
-    
-    
-    <div class="paper">
-      <a class="paper-title" href="assets/papers/econ122.pdf">Econ 122: Health after Insurance for China's Migrant Population</a>
-      <div class="tags">
-        <span class="tag">Health</span>
-        <span class="tag">Labor</span>
-        <span class="tag">China</span>
-      </div>
-      <p class="abstract"> Using a two-way fixed-effects difference-in-differences design on China Family Panel Studies data, this paper finds that China's 2016 merger of urban (URBMI) and rural (NRCMS) health insurance produced a net increase in uninsurance of 5.6 percentage points among migrants in the short run, consistent with individuals disenrolling from NRCMS upon announcement of the new scheme but facing delays in completing enrollment in URRBMI (the merged insurance scheme). This paper did not find significant changes in self-reported health outcomes or utilization. </p>
-      <div class="paper-links">
-        <a href="assets/papers/econ122.pdf">PDF</a>
-      </div>
-        <div style="
-            margin-top: 12px;
-            padding: 10px 16px;
-            border-left: 3px solid var(--cardinal);
-            background: var(--cardinal-bg);
-            color: var(--grey);
-            font-size: 15px;
-            font-style: italic;
-            line-height: 1.65;
-          ">
-            This paper allowed me to explore a topic I had first encountered at Hudson, that of health insurance. Specifically, I was able to look at the 2016 merger of China's urban and rural health insurance schemes and to focus my analysis on migrants, a population I had already come to care about deeply through my reading on the hukou system. What surprised me most was that my main finding was counterintuitive. Rather than expanding coverage, the reform actually produced a short-run increase in uninsurance among migrants. This pushed me to think carefully about the gap between what a policy is designed to do and how it is actually implemented when local governments are structurally underfunded and oversight is skewed toward optimizing for and prioritizing markers like GDP rather than insurance coverage. Prof. Alsan's class had already primed me to pay attention to health inequities and how systems may enable them, and this paper felt like a direct extension of that, applied in the under-explored setting of China's migrant population.
-          </div>
-    </div>
-
-
-    <div class="paper">
-      <a class="paper-title" href="assets/papers/econ177.pdf">Econ 177: Migration after Extreme Temperature under China's Hukou System</a>
-      <div class="tags">
-        <span class="tag">Health</span>
-        <span class="tag">China</span>
-      </div>
-      <p class="abstract"> Using a two-way fixed-effects regression on China Panel Family Studies data aggregated to the province-year level, this paper finds that one more day where average temperature rises above 90°F raises inter-provincial migration rates by 0.19 percentage points, with the hukou system likely muting a larger response. </p>
-      <div class="paper-links">
-        <a href="assets/papers/econ177.pdf">PDF</a>
-      </div>
-        <div style="
-            margin-top: 12px;
-            padding: 10px 16px;
-            border-left: 3px solid var(--cardinal);
-            background: var(--cardinal-bg);
-            color: var(--grey);
-            font-size: 15px;
-            font-style: italic;
-            line-height: 1.65;
-          ">
-            With this paper, I was able to combine two topics that I had been interested in separately: China's institutional constraints on migration and the growing literature on climate as a driver of human behavior. I was honestly surprised that even a modest effect showed up at all in my paper, given my impression of the requirements for migration, especially urbanization. I enjoyed this paper especially because it was my first experience retrieving data from China, and also working with panel data. Being able to develop my own question and make sense of a large and complex dataset was a valuable experience, and made me appreciate the data work that goes into research much more. It also sharpened my skills in discerning how to employ my empirical strategy in a real-world setting, outside of coursework. 
-      </div>
-    </div>
-
-<!--
-    <div class="paper">
-      <a class="paper-title" href="assets/papers/math56_1.pdf">Math 56: Linear Algebra Paper</a>
-      <p class="abstract"> This paper constructs the dual space of a finite-dimensional vector space, proves that its dual basis is indeed a basis, and uses this framework to define the trace of a linear map and establish its basis-independence and cyclicity property. </p>
-      <div class="paper-links">
-        <a href="assets/papers/math56_1.pdf">PDF</a>
-      </div>
-    </div>
-
-    <div class="paper">
-      <a class="paper-title" href="assets/papers/math56_2.pdf">Math 56: Real Analysis Paper</a>
-      <p class="abstract"> This paper explores how rearranging the terms of an infinite series affects its sum, proving that series with nonnegative terms or absolutely convergent series are rearrangement-invariant, while series with both infinite positive and negative parts can be rearranged to converge to any real number. </p>
-      <div class="paper-links">
-        <a href="assets/papers/math56_2.pdf">PDF</a>
-      </div>
-    </div>
--->
-    <hr />
-
-
-        <!-- ══ PICTURES ══ -->
-   <h2> Visuals </h2>
-
-    <div style="margin-bottom: 32px;">
-      <img src="assets/images/pentagon.png" alt="At the Pentagon"
-           style="float: left; width: 170px; border-radius: 4px; margin: 0 20px 8px 0;" />
-    <p style="margin: 0; font-family: 'Source Sans 3', sans-serif; font-size: 15px; color: var(--grey); line-height: 1.7;">
-        At the Hudson Institute, I first began to understand how differently news media and economic analysis treated China. From an economic lens, I began to understand China's growing debt, stemming from its fiscal system, as well as structural urban-rural disparities relating to the disbursement of social services (healthcare, pension, unemployment, poverty assistance) that drive higher household savings rates.
-      </p>
-      <div style="clear: both;"></div>
-    </div>
-
-   <div style="margin-bottom: 32px;">
-      <img src="assets/images/rlaojie.png" alt="Walking China's traditional streets"
-           style="float: right; width: 170px; border-radius: 4px; margin: 0 20px 8px 0;" />
-      <p style="margin: 0; font-family: 'Source Sans 3', sans-serif; font-size: 15px; color: var(--grey); line-height: 1.7;">
-        On walks like these through China's traditional streets (lao jie), it is easy to see how China's rich social and economic culture continues to influence behavior today. The importance of personal relationships (guanxi) helps fill a vacuum created by weaker legal and financial institutions. These weak institutions also create conditions for the bank-dominated financial system in China, which has increased pressure for private firms who face more stringent lending requirements than large state-owned enterprises. Exploring how joint ventures may offer regulatory relief and an easier financing path is one of my goals this summer in D.C.
-      </p>
-      <div style="clear: both;"></div>
-    </div>
-    
-      <div style="margin-bottom: 32px;">
-        <img src="assets/images/rpku.png" alt="PKU campus"
-             style="float: left; width: 170px; border-radius: 4px; margin: 0 20px 8px 0;" />
-        <p style="margin: 0; font-family: 'Source Sans 3', sans-serif; font-size: 15px; color: var(--grey); line-height: 1.7;">
-          While I am studying abroad at PKU, I am starting to pursue some of my own research questions under the guidance of Prof. Rozelle, through an independent study. I am trying to learn more about health insurance and its link with local government debt. As more of the local budget may have to service debt and interest payments, less may be able to go towards hospitals, exacerbating China's existing treatment denial problem due to its upfront-payment system. This may disproportionately impact elderly, who have fewer resources and higher chance of illness. This independent study is showing me firsthand the difficulties of accessing messy real-world data and making sense of different stories. 
-        </p>
-    
-        <div style="clear: both;"></div>
-      </div>
-
-
-    
-     <hr />   
-    
-    <!-- ══ PRESENTATIONS ══ -->
-    <h2>Coursework: Presentations and Other Essays </h2>
-
-    <div class="paper">
-      <a class="paper-title" href="assets/presentations/econ157pres.pdf">Econ 157: Acquisition of Activision-Blizzard by Microsoft</a>
-      <p class="abstract"> Presentation delivered in class on the economic arguments of both parties in Microsoft and Activision-Blizzard v. FTC (2022). </p>
-      <div class="paper-links">
-        <a href="assets/presentations/econ157pres.pdf">PDF</a>
-      </div>
-              <div style="
-            margin-top: 12px;
-            padding: 10px 16px;
-            border-left: 3px solid var(--cardinal);
-            background: var(--cardinal-bg);
-            color: var(--grey);
-            font-size: 15px;
-            font-style: italic;
-            line-height: 1.65;
-          ">
-            I greatly enjoyed this presentation's deep dive into the two opposing economic analyses for Microsoft's acquisition of Activision-Blizzard. Being able to see how vertical integration, platform effects, and innovation effects could be argued to support different sides was extremely interesting to me, and showed me just how applicable my coursework was. I felt that the core estimation of the expected switching rates between gaming consoles and a customer's lifetime value emphasized how assumption-sensitive applied economics can be. This was a project I easily spent hours on, and it deepened my interest in industrial organization considerably.
-          </div>
-    </div>
-
-    <div class="paper">
-      <a class="paper-title" href="assets/presentations/econ177pres.pdf">Econ 177: Electricity Pricing Reform</a>
-      <p class="abstract"> Proposal presented in class on new pricing schedule for electricity in California, calculating changes in welfare by income and CARE status.  </p>
-      <div class="paper-links">
-        <a href="assets/presentations/econ177pres.pdf">PDF</a>
-      </div>
-              <div style="
-            margin-top: 12px;
-            padding: 10px 16px;
-            border-left: 3px solid var(--cardinal);
-            background: var(--cardinal-bg);
-            color: var(--grey);
-            font-size: 15px;
-            font-style: italic;
-            line-height: 1.65;
-          ">
-            In this presentation, I directly applied values from the literature (Borenstein and Bushnell's marginal and private cost estimates for electricity) and developed a new pricing schedule under the constraint that I stay profit-neutral with the reform. What I found most valuable was deciding how to analyze the relative changes in welfare given the profit-neutral constraint, and my choices to break it down by both income and CARE status reflected the focus in class on weighing welfare through multiple lenses rather than just one. I found this to be more than an exercise, and it showed me practically how academia can importantly inform policy.
-        </div>
-    </div>
-
-    
-    <div class="paper">
-      <a class="paper-title" href="assets/papers/soc175_2.pdf">Soc 175: Control over Growth</a>
-      <div class="tags">
-        <span class="tag">China</span>
-      </div>
-      <p class="abstract"> This paper argues that China's initial growth model was built on capital accumulation, export manufacturing, and an extensive use of FDI. As investment returns diminish, the party's drive for political consolidation increasingly blocks the fiscal and structural reforms needed to avoid the middle-income trap. </p>
-      <div class="paper-links">
-        <a href="assets/papers/soc175_2.pdf">PDF</a>
-      </div>
-    </div>
-
-    <div class="paper">
-      <a class="paper-title" href="assets/papers/soc175_1.pdf">Soc 175: Growth without Discipline</a>
-      <div class="tags">
-        <span class="tag">China</span>
-      </div>
-      <p class="abstract"> This paper argues that China's economy is organized differently from other major modern economies through its reliance on state-owned enterprises, financial insulation from the global economy, and a party promotion system narrowly focused on GDP growth and fiscal revenues. These features consolidate political power but generate runaway debt and slacken market discipline. </p>
-      <div class="paper-links">
-        <a href="assets/papers/soc175_1.pdf">PDF</a>
-      </div>
-               <div style="
-            margin-top: 12px;
-            padding: 10px 16px;
-            border-left: 3px solid var(--cardinal);
-            background: var(--cardinal-bg);
-            color: var(--grey);
-            font-size: 15px;
-            font-style: italic;
-            line-height: 1.65;
-          ">
-            These two essays gave me an opportunity to condense my thoughts on China's development, focusing on a larger macroeconomic lens rather than evaluating the effects of specific policies or reforms. I was able to sharpen my opinion on China's increasing political consolidation as a barrier to further growth, and provide evidence over time that predicted this problem and continues to underline its growing trickiness. Combining the political aspect to my previously economic-focused work opened up a new side of analysis that I found new and enriching, especially when analyzing a country like China with a one-party system that is heavily involved in most organized activity. While political factors had always been a motivation in my previous work, bringing them to the focus gave way to what I felt was more layered thinking.
-        </div>
-    </div>
-  
-    <hr />
-
-    <!-- ══ TEACHING ══ -->
-    <h2>Teaching</h2>
-
-    <div class="teaching-entry">
-      <strong>Teaching Assistant [Winter 2026]</strong>
-      Econ 131: The Chinese Economy
-      <ul>
-        <li>Ran section, hosted office hours, and administered and graded tests for 69 students.</li>
-        <li>Course focused on China's development, growth model, and reforms.</li>
-        <div class="paper-links">
-          <a href="assets/teaching/syllabus131.pdf">Syllabus</a>
-        </div>
-      </ul>
-            <div style="
-            margin-top: 12px;
-            padding: 10px 16px;
-            border-left: 3px solid var(--cardinal);
-            background: var(--cardinal-bg);
-            color: var(--grey);
-            font-size: 15px;
-            font-style: italic;
-            line-height: 1.65;
-          ">
-            Teaching as part of my economics journey at Stanford has been valuable in its own way. In getting a sense of both what students were confused by and what they were interested in exploring in their midterm and final presentations and papers, I better understood which parts of the Chinese economy were least understandable to those with no previous experience in the country or the culture, and additionally learned plenty from their deep dives into a wide range of nicher topics such as the gambling industry or marriage customs in remote regions. I also found it rewarding to watch students who started the quarter with little context develop real curiosity about China by the end.
-          </div>
-    </div>
-  
-      <hr />
 
   </div>
+
 </body>
 </html>
